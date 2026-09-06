@@ -1,16 +1,10 @@
-# profullstack/coinpay
+# profullstack/coinpay (Composer)
 
-The CoinPay CLI from Composer. A launcher for @profullstack/coinpay on npm.
-
-**This repository is a read-only mirror.** The source lives at
-[profullstack/x402-ports](https://github.com/profullstack/x402-ports/tree/main/php/coinpay)
-and this copy exists only because Packagist cannot install a package whose
-`composer.json` sits in a subdirectory. It is overwritten automatically on every
-push to the monorepo's `main`.
-
-Open issues and pull requests against
-[profullstack/x402-ports](https://github.com/profullstack/x402-ports), not here.
+The [CoinPay](https://coinpayportal.com) CLI from Composer. `coinpay x402 pay` buys a crawl pass from any site running [x402-gateway](https://github.com/profullstack/x402-gateway).
 
 ```
-composer require profullstack/coinpay
+composer global require profullstack/coinpay
+coinpay x402 pay https://rssamplifier.com/crawl --output pass.json
 ```
+
+The CLI itself is [@profullstack/coinpay](https://www.npmjs.com/package/@profullstack/coinpay) on npm. This package is a launcher: it runs a `coinpay` already installed with npm, or fetches the CLI through `npx`, `bunx`, `pnpm dlx` or `deno run`. Node.js 20+, Bun or Deno is required. `COINPAY_VERSION` pins the npm version; `COINPAY_BIN` points at a specific executable.
